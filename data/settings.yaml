@@ -1,47 +1,112 @@
 telegram:
-  token: TELEGRAM_BOT_TOKEN_HERE # Telegram bot tokens look like this: 113031530:AAH_4c5Gt9gsVu82OVNjUV7poU7PodYiNsA
   useFirstNameInsteadOfUsername: false
   colonAfterSenderName: false
   skipOldMessages: true
   sendEmojiWithStickers: true
-  useCustomEmojiFilter: false # Experimental, might break
-  replaceAtWithHash: false # Experimental, might break
-  replaceExcessiveSpaces: false # Experimental, might break
-  removeNewlineSpaces: false # Experimental, might break
+  useCustomEmojiFilter: false
+  replaceAtWithHash: false
+  replaceExcessiveSpaces: false
+  removeNewlineSpaces: false
   suppressFileTooBigMessages: false
   suppressThisIsPrivateBotMessage: false
+  token: 6561229441:AAHIy5wJvy6ALxQm6UTQl6XP6QuxiTCDLvg
 discord:
-  useNickname: false
-  token: DISCORD_BOT_TOKEN_HERE # Discord bot tokens look like this: MjI3MDA1NzIvOBQ2MzAzMiMz.DRf-aw.N0MVYtDxXYPSQew4g2TPqvQve2c
   skipOldMessages: true
+  useNickname: false
   replyLength: 100
   maxReplyLines: 2
   suppressThisIsPrivateBotMessage: false
   enableCustomStatus: false
-  customStatusMessage: "TediCross"
-bridges:
-  - name: First bridge
-    direction: both
-    threadMap: # Remove this and (telegram/discord pairs below if not planing to use Threads )
-      - name: First thread # optional naming for thread mapping
-        telegram: TELEGRAM_THREAD_ID  # Threads have positive IDs
-        discord: 'DISCORD_THREAD_ID' # Discord thread IDs looks like other channel IDs
-      - telegram: TELEGRAM_THREAD_ID  # Threads have positive IDs
-        discord: 'DISCORD_THREAD_ID' # Discord thread IDs looks like other channel IDs
-    telegram:
-      chatId: TELEGRAM_CHAT_ID # Remember that Telegram group and channel IDs are negative. Include the `-` if you are bridging a group or a channel
-      relayJoinMessages: true
-      relayLeaveMessages: true
-      sendUsernames: true
-      crossDeleteOnDiscord: true
-    discord:
-      channelId: 'DISCORD_CHANNEL_ID' # This ID must be wrapped in single quotes. Example: '244791815503347712'
-      relayJoinMessages: true
-      relayLeaveMessages: true
-      sendUsernames: true
-      crossDeleteOnTelegram: true
-      useEmbeds: 'auto' # always / never / auto
+  customStatusMessage: TediCross
+  useEmbeds: auto
+  token: MTE1MDAxMDI3MTEwOTIxODM4Nw.GfNU4N.77rxEIXI3A3t9RV48UHy5cbee3jj0i9tt4aeps
 debug: false
 messageTimeoutAmount: 24
-messageTimeoutUnit: 'hours' # This string must be a valid Moment time format. Example: seconds, minutes, hours, days, weeks, months, years
+messageTimeoutUnit: hours
 persistentMessageMap: false
+bridges:
+  - name: football bridge
+    direction: both
+    threadMap:
+      - name: First thread
+        telegram: TELEGRAM_THREAD_ID
+        discord: DISCORD_THREAD_ID
+      - telegram: TELEGRAM_THREAD_ID
+        discord: DISCORD_THREAD_ID
+    telegram:
+      chatId: -1001985920479
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: false 
+      crossDeleteOnDiscord: true
+    discord:
+      channelId: '1150008868865310721'
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: false
+      crossDeleteOnTelegram: true
+      useEmbeds: auto
+  - name: combat bridge
+    direction: both
+    threadMap:
+      - name: First thread
+        telegram: TELEGRAM_THREAD_ID
+        discord: DISCORD_THREAD_ID
+      - telegram: TELEGRAM_THREAD_ID
+        discord: DISCORD_THREAD_ID
+    telegram:
+      chatId: -948868630
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: false
+      crossDeleteOnDiscord: true
+    discord:
+      channelId: '1150009059181867068'
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: false
+      crossDeleteOnTelegram: true
+      useEmbeds: auto
+  - name: usa bridge
+    direction: both
+    threadMap:
+      - name: First thread
+        telegram: TELEGRAM_THREAD_ID
+        discord: DISCORD_THREAD_ID
+      - telegram: TELEGRAM_THREAD_ID
+        discord: DISCORD_THREAD_ID
+    telegram:
+      chatId: -931773410
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: false
+      crossDeleteOnDiscord: true
+    discord:
+      channelId: '1150009250865758238'
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: false
+      crossDeleteOnTelegram: true
+      useEmbeds: auto
+  - name: other bridge
+    direction: both
+    threadMap:
+      - name: First thread
+        telegram: TELEGRAM_THREAD_ID
+        discord: DISCORD_THREAD_ID
+      - telegram: TELEGRAM_THREAD_ID
+        discord: DISCORD_THREAD_ID
+    telegram:
+      chatId: -955327448
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: false
+      crossDeleteOnDiscord: true
+    discord:
+      channelId: '1150009458550911118'
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: false
+      crossDeleteOnTelegram: true
+      useEmbeds: auto
+      
